@@ -19,7 +19,7 @@ Flag old-base
   manual: False
 
 Executable time-attack-snap
-  hs-source-dirs: src
+  hs-source-dirs: src/main
   main-is: Main.hs
 
   Build-depends:
@@ -61,3 +61,17 @@ Executable time-attack-snap
     else
       ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2
                    -fno-warn-orphans
+
+Test-Suite time-attack-snap-test
+    type:       exitcode-stdio-1.0
+    hs-source-dirs: src/test, src/main
+    main-is:    Test.hs
+    build-depends: base,
+                   snap >= 0.13.2.8 && < 0.14,
+                   snap-core >= 0.9 && < 0.10,
+                   lens >= 3 && < 5,
+                   mtl >= 2 && < 3,
+                   snap-testing >= 0.6 && < 2.0,
+                   containers == 0.5.*,
+                   async == 2.*,
+                   io-streams == 1.*

@@ -5,7 +5,7 @@
 -- site. The 'app' function is the initializer that combines everything
 -- together and is exported by this module.
 module Site
-  ( app
+  ( app, routes
   ) where
 
 ------------------------------------------------------------------------------
